@@ -39,8 +39,12 @@ body {
 
 .contents-wrap {
   margin: 15px;
+  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .right-layout {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
 }

@@ -10,13 +10,15 @@
       <p><%= book.title %></p>
       <% end %>
     </div>
-    <div class="contents-wrap">
+    <div class="contents-wrap ">
         <h2>body</h2>
         <% @books.each do |book| %>
-        <p class="right-layout"><%= book.body %></p>
-          <p class="right-layout"><%= link_to 'show', book_path(book) %></p>
-          <p class="right-layout"><%= link_to "edit", edit_book_path(book.id) %></p>
-          <p class="right-layout"><%= link_to "削除", book_path(book.id), method: :delete, "data-confirm"=> "Are you sure?"  %></p>
+        <div class="right-layout">
+          <p><%= book.body %></p>
+          <p><%= link_to 'show', book_path(book) %></p>
+          <p><%= link_to "edit", edit_book_path(book.id) %></p>
+          <p><%= link_to "削除", book_path(book.id), method: :delete, "data-confirm"=> "Are you sure?"  %></p>
+        </div>
         <% end %>
     </div>
   </div>
