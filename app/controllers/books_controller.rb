@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   end
   
   def show
-
+    @book = Book.find(params[:id])
   end
   
   def new
@@ -12,12 +12,14 @@ class BooksController < ApplicationController
   end
   
   def create
-    # １.&2. データを受け取り新規登録するためのインスタンス作成
-    list = List.new(list_params)
-    # 3. データをデータベースに保存するためのsaveメソッド実行
-    list.save
-    # 4. トップ画面へリダイレクト
-    redirect_to '/top'
+    @book = Book.new(book_params)
+    if @book.save
+    flash[:notice] = "success"
+      redirect_to book_path(@book.id)
+
+    else
+      render :new
+    end
   end
   
   def edit
@@ -42,6 +44,7 @@ class BooksController < ApplicationController
   private
   
   def book_params
+    params.require('book').permit(:title, :body)
   end
   
   

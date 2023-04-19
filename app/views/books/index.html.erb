@@ -1,0 +1,9 @@
+<h1>投稿一覧</h1>
+<% @book.each do |book| %>
+  <div>
+    <h3><%= book.title %></h3>
+    <p><%= book.body %></p>
+    <%= link_to '詳細', book_path(book) %>
+  </div>
+<% end %>
+<%= link_to '新規投稿', new_book_path %>

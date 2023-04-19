@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   # resources :books
   # resources :posts
   
-  get 'books/new'
-  post 'books' => 'books#create' 
+  # get 'books/new'
+  # post 'books' => 'books#create' 
+  # get 'books/:id' => 'books#show'
+  resources :books
+  root 'books#index'
 end
