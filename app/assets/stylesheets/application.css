@@ -33,6 +33,10 @@ body {
   display: flex;
 }
 
+.list-wrap p {
+  margin: 8px;
+}
+
 .contents-wrap {
   margin: 15px;
 }

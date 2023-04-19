@@ -1,5 +1,12 @@
+<div class="container">
 <h2>タイトル</h2>
 <p><%= @book.title %></p>
 
 <h2>本文</h2>
 <p><%= @book.body %></p>
+<div class="list-wrap">
+  <p><%= link_to "編集", edit_book_path(@book.id) %></p>
+  <p>|</p>
+  <p><%= link_to '一覧に戻る', books_path %></p>
+</div>
+</div>

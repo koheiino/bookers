@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   # get 'books/:id' => 'books#show'
   resources :books
   root 'books#index'
+   get 'lists/:id/edit' => 'lists#edit', as: 'edit_list'
 end
