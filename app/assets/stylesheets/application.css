@@ -41,3 +41,6 @@ body {
   margin: 15px;
 }
 
+.right-layout {
+  display: inline-block;
+}
