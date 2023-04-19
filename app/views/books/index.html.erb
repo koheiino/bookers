@@ -1,9 +1,21 @@
-<h1>投稿一覧</h1>
-<% @book.each do |book| %>
-  <div>
-    <h3><%= book.title %></h3>
-    <p><%= book.body %></p>
-    <%= link_to '詳細', book_path(book) %>
+<div class="container">
+<h1>books</h1>
+
+  <div class="list-wrap">
+    <div class="contents-wrap">
+      <h2>title</h2>
+      <% @book.each do |book| %>
+      <p><%= book.title %></p>
+      <% end %>
+    </div>
+    <div class="contents-wrap ">
+        <h2>body</h2>
+        <% @book.each do |book| %>
+        <p><%= book.body %></p>
+          <p><%= link_to '詳細', book_path(book) %></p>
+          <% end %>
+      </div>
+    </div>
+    <%= link_to '新規投稿', new_book_path %>
   </div>
-<% end %>
-<%= link_to '新規投稿', new_book_path %>
+</div>
