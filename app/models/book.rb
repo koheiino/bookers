@@ -1,9 +1,4 @@
 class Book < ApplicationRecord
-  def new
-    @book = Book.new
-    
-  end
-  def index
-    @books = Book.all
-  end
+  validates :title, presence: true
+  validates :body, presence: true
 end
