@@ -1,12 +1,13 @@
 <div class="container">
-<h2>タイトル</h2>
-<p><%= @book.title %></p>
-
-<h2>本文</h2>
-<p><%= @book.body %></p>
-<div class="list-wrap">
-  <p><%= link_to "編集", edit_book_path(@book.id) %></p>
-  <p>|</p>
-  <p><%= link_to '一覧に戻る', books_path %></p>
-</div>
+  <div class="right-layout show-section">
+    <p><strong>Title:</strong><%= @book.title %></p>
+  </div>
+  <div class="right-layout show-section">
+    <p><strong>Body:</strong><%= @book.body %></p>
+  </div>
+  <div class="right-layout index-section">
+    <p><%= link_to "Edit", edit_book_path(@book.id) %></p>
+    <p>|</p>
+    <p><%= link_to 'Back', books_path %></p>
+  </div>
 </div>

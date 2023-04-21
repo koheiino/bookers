@@ -1,10 +1,9 @@
 class BooksController < ApplicationController
-  def index
-    # @booksはBookモデルモデルのオブジェクト一覧を格納する
-    @books = Book.all
-    # @bookは新規投稿用の空のBookオブジェクト.newで初期化
-    @book = Book.new
-  end
+def index
+  @books = Book.all
+  @book = Book.new
+  @book_posts = Book.new
+end
   
   def show
     @book = Book.find(params[:id])
@@ -15,15 +14,17 @@ class BooksController < ApplicationController
   end
   
   def create
-    @book = Book.new(book_params)
-    if @book.save
-    flash[:notice] = "success"
-      redirect_to book_path(@book.id)
-
-    else
-      render :new
-    end
+  @book_posts = Book.new(book_params)
+  if @book_posts.save
+    flash[:notice] = "Success"
+    redirect_to book_path(@book_posts)
+  else
+    @books = Book.all
+    flash.now[:alert] = "Error: Please fill in all fields."
+    render :index
   end
+  end
+
   
   def edit
     @book = Book.find(params[:id])
@@ -43,7 +44,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id]) 
     # レコード削除
     @book.destroy
-    # 投稿一覧画面へ
+    # 投稿一覧画面へリダイレクト
     redirect_to books_url, notice: 'Book was successfully destroyed.'
   end
   

@@ -30,16 +30,27 @@ body {
   margin: 33px;
 }
 .list-wrap {
-  display: flex;
+  padding: 20px;
 }
+
+.list-wrap h2 {
+  display: inline-block;
+  margin-right: 20px; /* h2要素間の間隔 */
+  width: 15%;
+}
+
+
 
 .list-wrap p {
   margin: 8px;
 }
 
+.contents-area {
+  width: 15%;
+}
+
 .contents-wrap {
   margin: 15px;
-  display: block;
   display: flex;
   flex-direction: column;
 }
@@ -47,4 +58,17 @@ body {
 .right-layout {
   display: flex;
   flex-direction: row;
+}
+
+.index-section {
+  margin-top: 20px
+}
+
+.index-section p {
+  margin: 10px;
+}
+
+
+.show-section {
+  margin: 25px
 }
