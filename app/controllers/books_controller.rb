@@ -16,7 +16,7 @@ end
   def create
   @book_posts = Book.new(book_params)
   if @book_posts.save
-    flash[:notice] = "Success"
+    flash[:notice] = "Book was successfully created."
     redirect_to book_path(@book_posts)
   else
     @books = Book.all

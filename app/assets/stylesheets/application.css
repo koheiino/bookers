@@ -72,3 +72,41 @@ body {
 .show-section {
   margin: 25px
 }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr {
+  text-align: center;
+  padding: 8px;
+}
+
+th {
+  font-weight: bold;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+.success-alert {
+  color: green;
+  margin: 25px;
+}
+
+.error {
+  color: red;
+  padding: 10px;
+}
+
+p {
+  color: #333;
+}
